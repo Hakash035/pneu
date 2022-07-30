@@ -34,7 +34,7 @@ def submit_file():
 
 
 if __name__ == "__main__":
-    app.config['SECRET_KEY'] = 'super secret key'
+    app.secret_key = 'super secret key'
     app.config['SESSION_TYPE'] = 'filesystem'
     app.debug = True
     app.run()
