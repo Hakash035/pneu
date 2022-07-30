@@ -7,6 +7,8 @@ UPLOAD_FOLDER = 'static/images/'
 
 app = Flask(__name__, static_folder="static")
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = 'super secret key'
+app.config['SESSION_TYPE'] = 'filesystem'
 
 @app.route('/')
 def index():
@@ -34,8 +36,6 @@ def submit_file():
 
 
 if __name__ == "__main__":
-    app.secret_key = 'super secret key'
-    app.config['SESSION_TYPE'] = 'filesystem'
     #sess.init_app(app)
     app.debug = True
     app.run()
